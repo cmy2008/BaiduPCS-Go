@@ -184,7 +184,9 @@ func RunUpload(localPaths []string, savePath string, opt *UploadOptions) {
 			fmt.Printf("[%s] 加入上传队列: %s\n", info.Id(), walkedFiles[k3])
 		}
 	}
-
+	fmt.Printf("walkedFiles: %s ", walkedFiles)
+	fmt.Printf("localPaths: %s ", localPaths)
+	fmt.Printf("executor: %s ", executor)
 	// 没有添加任何任务
 	if executor.Count() == 0 {
 		fmt.Printf("未检测到上传的文件.\n")
