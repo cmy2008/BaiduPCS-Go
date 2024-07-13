@@ -184,7 +184,7 @@ func RunUpload(localPaths []string, savePath string, opt *UploadOptions) {
 			fmt.Printf("[%s] 加入上传队列: %s\n", info.Id(), walkedFiles[k3])
 		}
 	}
-	walkedFiles, err := pcsutil.WalkDir(localPaths[k], "")s
+	walkedFiles, err := pcsutil.WalkDir(localPaths[k], "")
 	fmt.Printf("walkedFiles: %s ", walkedFiles)
 	fmt.Printf("localPaths: %s ", localPaths)
 	fmt.Printf("executor: %s ", executor)
