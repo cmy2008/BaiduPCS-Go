@@ -138,6 +138,7 @@ func RunUpload(localPaths []string, savePath string, opt *UploadOptions) {
 
 	for k := range localPaths {
 		walkedFiles, err := pcsutil.WalkDir(localPaths[k], "")
+		fmt.Printf("walkedFiles: %s ", walkedFiles)
 		if err != nil {
 			fmt.Printf("警告: 遍历错误: %s\n", err)
 			continue
@@ -184,8 +185,6 @@ func RunUpload(localPaths []string, savePath string, opt *UploadOptions) {
 			fmt.Printf("[%s] 加入上传队列: %s\n", info.Id(), walkedFiles[k3])
 		}
 	}
-	walkedFiles, err := pcsutil.WalkDir(localPaths[k], "")
-	fmt.Printf("walkedFiles: %s ", walkedFiles)
 	fmt.Printf("localPaths: %s ", localPaths)
 	fmt.Printf("executor: %s ", executor)
 	// 没有添加任何任务
